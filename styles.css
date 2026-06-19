@@ -1,0 +1,98 @@
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  background: #e5e7e4;
+}
+
+.app {
+  width: 360px;
+  height: 800px;
+  position: relative;
+  background: #e5e7e4;
+  overflow: hidden;
+}
+
+/* TODAS las imágenes mantienen su tamaño original */
+img {
+  position: absolute;
+  display: block;
+  max-width: none;
+}
+
+/* ------------------ */
+/* AVE (FONDO) */
+/* ------------------ */
+.ave {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+/* ------------------ */
+/* PARTE SUPERIOR */
+/* ------------------ */
+.banner-sup {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.banner-principal {
+  top: 100px; /* 40px debajo del superior */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+/* ------------------ */
+/* BOTONES LATERALES */
+/* ------------------ */
+.btn-izq {
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: 3;
+}
+
+.btn-der {
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  z-index: 3;
+}
+
+/* ------------------ */
+/* PARTE INFERIOR */
+/* ------------------ */
+.banner-inf {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.banner-ave {
+  bottom: 60.1px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+
+/* 30px arriba de banner_ave */
+.bc {
+  bottom: 180px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 4;
+}
+
+/* 30px arriba del anterior */
+.be {
+  bottom: 240px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 4;
+}
