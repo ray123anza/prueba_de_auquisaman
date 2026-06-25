@@ -1,98 +1,108 @@
-body {
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* FONDO GENERAL */
+body {
+  background: #e5e7e4;
   display: flex;
   justify-content: center;
-  background: #e5e7e4;
+  align-items: center;
+  height: 100vh;
 }
 
-.app {
+/* 📱 SIMULADOR DE CELULAR */
+.phone {
   width: 360px;
   height: 800px;
-  position: relative;
   background: #e5e7e4;
+
+  border-radius: 30px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+
   overflow: hidden;
+  position: relative;
 }
 
-/* TODAS las imágenes mantienen su tamaño original */
-img {
+/* CONTENIDO INTERNO */
+.app {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* ------------------ */
+/* BOTONES */
+/* ------------------ */
+.btn {
   position: absolute;
-  display: block;
-  max-width: none;
+  border: none;
+  background: #83a17f;
+  box-shadow: 0 6px 0 #759272;
+  transition: all 0.1s ease;
 }
 
-/* ------------------ */
-/* AVE (FONDO) */
-/* ------------------ */
-.ave {
+/* EFECTO PRESIÓN */
+.btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 0 0 #83a17f;
+}
+
+/* BOTONES CIRCULARES */
+.circular {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 0;
-}
-
-/* ------------------ */
-/* PARTE SUPERIOR */
-/* ------------------ */
-.banner-sup {
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 2;
-}
-
-.banner-principal {
-  top: 100px; /* 40px debajo del superior */
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 2;
-}
-
-/* ------------------ */
-/* BOTONES LATERALES */
-/* ------------------ */
-.btn-izq {
-  top: 50%;
-  left: 0;
   transform: translateY(-50%);
-  z-index: 3;
 }
 
-.btn-der {
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
-  z-index: 3;
+.left {
+  left: 25px;
 }
 
-/* ------------------ */
-/* PARTE INFERIOR */
-/* ------------------ */
-.banner-inf {
-  bottom: 0;
+.right {
+  right: 25px;
+}
+
+/* BOTÓN CUADRADO */
+/* ocultar checkbox */
+.square-toggle input {
+  display: none;
+}
+
+/* botón normal */
+.square {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 18px;
+
+  width: 140px;
+  height: 35px;
+  border-radius: 12px;
+
+  background: #a9c396;
+  box-shadow: 0 6px 0 #759272;
+
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+
+  position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 2;
+  bottom: 250px;
+
+  transition: all 0.15s ease;
 }
 
-.banner-ave {
-  bottom: 60.1px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 3;
-}
-
-/* 30px arriba de banner_ave */
-.bc {
-  bottom: 180px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 4;
-}
-
-/* 30px arriba del anterior */
-.be {
-  bottom: 240px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 4;
+/* estado PRESIONADO (cuando está activado) */
+.square-toggle input:checked + .square {
+  transform: translateX(-50%) translateY(4px);
+  box-shadow: 0 2px 0 #759272;
+  background: #7fa86b;
 }

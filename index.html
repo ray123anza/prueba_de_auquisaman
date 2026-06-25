@@ -2,31 +2,39 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Interfaz</title>
+
+  <!-- NECESARIO PARA MÓVIL -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>App Simulada</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<div class="app">
+<div class="phone">
 
-  <!-- Fondo ave (detrás de todo) -->
-  <img src="imagenes/colibri_cometa_v1.png" class="ave">
+  <div class="app">
 
-  <!-- Parte superior -->
-  <img src="interfaz/banner_sup.png" class="banner-sup">
-  <img src="interfaz/banner_principal.png" class="banner-principal">
+    <!-- BOTÓN IZQUIERDO -->
+    <button class="btn circular left"></button>
 
-  <!-- Botones laterales -->
-  <img src="interfaz/bi_off.png" class="btn-izq">
-  <img src="interfaz/bd_off.png" class="btn-der">
+    <!-- BOTÓN DERECHO -->
+    <button class="btn circular right"></button>
 
-  <!-- Parte inferior -->
-  <img src="interfaz/banner_inf.png" class="banner-inf">
-  <img src="interfaz/banner_ave.png" class="banner-ave">
-  <img src="interfaz/BC_ON.png" class="bc">
-  <img src="interfaz/be_off.png" class="be">
+    <!-- INTERRUPTOR -->
+    <div class="switch" id="switch"></div>
+
+    <!-- BOTÓN CUADRADO -->
+    <label class="square-toggle">
+     <input type="checkbox">
+     <span class="square">ESCUCHAR</span>
+    </label>
+
+  </div>
 
 </div>
+
+<script src="script.js"></script>
 
 </body>
 </html>
