@@ -15,19 +15,50 @@
 
   <div class="app">
 
+    <!-- MARGEN INFERIOR -->
+    <div class="contenedor">
+
+     <div class="forma f1"></div>
+     <div class="forma f2"></div>
+     <div class="forma f3"></div>
+
+    </div>
+
     <!-- BOTÓN IZQUIERDO -->
-    <button class="btn circular left"></button>
+    <button id="leftBtn" class="btn circular left"></button>
 
     <!-- BOTÓN DERECHO -->
-    <button class="btn circular right"></button>
+    <button id="rightBtn" class="btn circular right"></button>
 
-    <!-- INTERRUPTOR -->
-    <div class="switch" id="switch"></div>
 
-    <!-- BOTÓN CUADRADO -->
+    <!-- BOTÓN ESCUCHAR -->
     <label class="square-toggle">
-     <input type="checkbox">
-     <span class="square">ESCUCHAR</span>
+     <input type="checkbox" id="escucharBtn">
+     <span class="square rojo">ESCUCHAR</span>
+    </label>
+
+    <!-- BOTÓN MAMIFEROS -->
+    <label class="square-toggle">
+     <input type="checkbox" id="btn_mamiferos">
+     <span class="verde">
+      <img src="interfaz/viscacha_v1.png" alt="">
+     </span> 
+    </label>
+
+    <!-- BOTÓN AVES -->
+    <label class="square-toggle">
+     <input type="checkbox" id="btn_aves">
+     <span class="azul">
+      <img src="interfaz/colibri_v1.png" alt="">
+     </span> 
+    </label>
+
+    <!-- BOTÓN INSECTOS -->
+    <label class="square-toggle">
+     <input type="checkbox" id="btn_insectos">
+     <span class="amarillo">
+      <img src="interfaz/mariposa_v1.png" alt="">
+     </span> 
     </label>
 
   </div>

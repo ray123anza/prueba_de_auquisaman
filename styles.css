@@ -16,7 +16,7 @@ body {
 /* 📱 SIMULADOR DE CELULAR */
 .phone {
   width: 360px;
-  height: 800px;
+  height: 790px;
   background: #e5e7e4;
 
   border-radius: 30px;
@@ -32,6 +32,23 @@ body {
   height: 100%;
   position: relative;
 }
+
+/* CONTENIDO INFERIOR */
+.contenedor {
+  position: relative;
+  height: 90px;
+}
+
+.forma f1{
+  width: 120px;
+  height: 80px;
+  background-color: #af713a;
+  position: absolute;
+  top: 0px;
+  left: 30px;
+  border-radius: 8px;
+}
+
 
 /* ------------------ */
 /* BOTONES */
@@ -68,13 +85,13 @@ body {
 }
 
 /* BOTÓN CUADRADO */
-/* ocultar checkbox */
+
 .square-toggle input {
   display: none;
 }
 
 /* botón normal */
-.square {
+.rojo {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -101,8 +118,110 @@ body {
 }
 
 /* estado PRESIONADO (cuando está activado) */
-.square-toggle input:checked + .square {
+.square-toggle input:checked + .rojo {
   transform: translateX(-50%) translateY(4px);
-  box-shadow: 0 2px 0 #759272;
-  background: #7fa86b;
+  box-shadow: 0 2px 0 #a9c396;
+  background: #a9c396;
+}
+
+/* botón mamiferos */
+.square-toggle input {
+  display: none;
+}
+.verde {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 120px;
+  height: 80px;
+
+  background: #ced1ce;
+  box-shadow: 0 -6px 0 #a8a8a8;
+
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 60px;
+
+  cursor: pointer;
+  overflow: hidden;
+}
+.verde img {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+}
+.square-toggle input:checked + .verde {
+  transform: translateX(-50%) translateY(4px);
+  box-shadow: 0 2px 0 #ffffff;
+  background: #ffffff;
+}
+
+/* botón ave */
+.square-toggle input {
+  display: none;
+}
+.azul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 120px;
+  height: 80px;
+
+  background: #ced1ce;
+  box-shadow: 0 -6px 0 #a8a8a8;
+
+  position: absolute;
+  left: 16.4%;
+  transform: translateX(-50%);
+  bottom: 60px;
+
+  cursor: pointer;
+  overflow: hidden;
+}
+.azul img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+.square-toggle input:checked + .azul {
+  transform: translateX(-50%) translateY(4px);
+  box-shadow: 0 2px 0 #ffffff;
+  background: #ffffff;
+}
+
+/* botón insectos */
+.square-toggle input {
+  display: none;
+}
+.amarillo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 120px;
+  height: 80px;
+
+  background: #ced1ce;
+  box-shadow: 0 -6px 0 #a8a8a8;
+
+  position: absolute;
+  left: 83.6%;
+  transform: translateX(-50%);
+  bottom: 60px;
+
+  cursor: pointer;
+  overflow: hidden;
+}
+.amarillo img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+.square-toggle input:checked + .amarillo {
+  transform: translateX(-50%) translateY(4px);
+  box-shadow: 0 2px 0 #ffffff;
+  background: #ffffff;
 }
