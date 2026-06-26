@@ -16,7 +16,7 @@ body {
 /* 📱 SIMULADOR DE CELULAR */
 .phone {
   width: 360px;
-  height: 790px;
+  height: 750px;
   background: #e5e7e4;
 
   border-radius: 30px;
@@ -31,22 +31,6 @@ body {
   width: 100%;
   height: 100%;
   position: relative;
-}
-
-/* CONTENIDO INFERIOR */
-.contenedor {
-  position: relative;
-  height: 90px;
-}
-
-.forma f1{
-  width: 120px;
-  height: 80px;
-  background-color: #af713a;
-  position: absolute;
-  top: 0px;
-  left: 30px;
-  border-radius: 8px;
 }
 
 
