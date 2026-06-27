@@ -74,7 +74,7 @@ body {
   position: absolute;
   object-fit: contain;
 
-  z-index: 10; /* encima de botones */
+  z-index: 1; /* encima de botones */
   pointer-events: none; /* no bloquea clics */
 }
 
@@ -123,6 +123,8 @@ body {
   background: #83a17f;
   border: none;
   cursor: pointer;
+
+  z-index: 10;
 }
 
 /* POSICIÓN */
@@ -203,6 +205,8 @@ body {
   bottom: 200px;
 
   transition: all 0.15s ease;
+
+  z-index: 10;
 }
 
 /* estado PRESIONADO (cuando está activado) */
@@ -312,4 +316,48 @@ body {
   transform: translateX(-50%) translateY(4px);
   box-shadow: 0 2px 0 #ffffff;
   background: #ffffff;
+}
+
+
+.contenedor-imagen {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 360px;
+
+  transform: translate(-50%, -50%);
+
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* capas */
+.img-layer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 100%;
+
+  transform: translate(-50%, -50%);
+
+  opacity: 0;
+  transition: opacity 0.6s ease;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* imagen */
+.img-layer img {
+  width: 100%;
+  height: auto; /* 🔥 NO se estira */
+  object-fit: contain; /* 🔥 mantiene proporción */
+}
+
+/* visible */
+.img-layer.activa {
+  opacity: 1;
 }

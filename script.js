@@ -43,3 +43,107 @@ botones.forEach(boton => {
     boton.checked = false;
   });
 });
+
+
+// ===== DATOS =====
+const aves = [
+  {
+    nombre: "colibri_cometa",
+    img1: "imagenes/colibri_cometa_v1.png",
+    img2: "imagenes/colibri_cometa_v2.png",
+    audio: "audios/colibri_cometa.mp3"
+  },
+  {
+    nombre: "colibri_gigante",
+    img1: "imagenes/colibri_gigante_v1.png",
+    img2: "imagenes/colibri_gigante_v2.png",
+    audio: "audios/colibri_gigante.mp3"
+  },
+  {
+    nombre: "colibri_rutilante",
+    img1: "imagenes/colibri_rutilante_v1.png",
+    img2: "imagenes/colibri_rutilante_v2.png",
+    audio: "audios/colibri_rutilante.mp3"
+  }
+];
+
+// ===== ESTADO =====
+let indiceActual = 0;
+let mostrandoA = true;
+
+// ===== ELEMENTOS =====
+const imgA = document.getElementById("imgA");
+const imgB = document.getElementById("imgB");
+const audio = document.getElementById("audioAve");
+
+const btnLeft = document.getElementById("leftBtn");
+const btnRight = document.getElementById("rightBtn");
+const escucharBtn = document.getElementById("escucharBtn");
+
+// ===== CAMBIO SUAVE REAL =====
+function cambiarImagen(src) {
+  const activa = mostrandoA ? imgA : imgB;
+  const inactiva = mostrandoA ? imgB : imgA;
+
+  inactiva.src = src;
+
+  // forzar render (truco clave)
+  inactiva.offsetHeight;
+
+  inactiva.classList.add("activa");
+  activa.classList.remove("activa");
+
+  mostrandoA = !mostrandoA;
+}
+
+// ===== MOSTRAR AVE =====
+function mostrarAve() {
+  const ave = aves[indiceActual];
+  cambiarImagen(ave.img1);
+}
+
+// ===== BOTONES =====
+btnRight.addEventListener("click", () => {
+  indiceActual = (indiceActual + 1) % aves.length;
+  detenerAudio();
+  mostrarAve();
+});
+
+btnLeft.addEventListener("click", () => {
+  indiceActual = (indiceActual - 1 + aves.length) % aves.length;
+  detenerAudio();
+  mostrarAve();
+});
+
+// ===== ESCUCHAR =====
+escucharBtn.addEventListener("change", () => {
+  const ave = aves[indiceActual];
+
+  if (escucharBtn.checked) {
+    cambiarImagen(ave.img2);
+
+    audio.src = ave.audio;
+    audio.play();
+  } else {
+    detenerAudio();
+  }
+});
+
+// ===== DETENER =====
+function detenerAudio() {
+  audio.pause();
+  audio.currentTime = 0;
+
+  escucharBtn.checked = false;
+
+  const ave = aves[indiceActual];
+  cambiarImagen(ave.img1);
+}
+
+// ===== FIN DE AUDIO =====
+audio.addEventListener("ended", () => {
+  detenerAudio();
+});
+
+// ===== INICIAL =====
+mostrarAve();
