@@ -80,10 +80,10 @@ body {
 
 /* POSICIONES */
 .decor1 {
-  top: 100px;
+  top: 90px;
   left: 0%;
   width: 360px;
-  height: 100px;
+  height: 115px;
 }
 
 .decor2 {
@@ -127,11 +127,11 @@ body {
 
 /* POSICIÓN */
 .left {
-  left: 25px;
+  left: 20px;
 }
 
 .right {
-  right: 25px;
+  right: 20px;
 }
 
 /* 🔺 TRIÁNGULO IZQUIERDO */
