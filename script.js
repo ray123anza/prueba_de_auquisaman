@@ -1,3 +1,12 @@
+window.addEventListener("load", () => {
+  const loader = document.getElementById("loader");
+
+  setTimeout(() => {
+    loader.classList.add("hidden");
+  }, 1200); // ⏱️ tiempo de animación
+});
+
+
 const escuchar = document.getElementById("escucharBtn");
 const left = document.getElementById("leftBtn");
 const right = document.getElementById("rightBtn");
@@ -147,3 +156,31 @@ audio.addEventListener("ended", () => {
 
 // ===== INICIAL =====
 mostrarAve();
+
+
+// Esperar a que cargue el DOM
+document.addEventListener("DOMContentLoaded", function () {
+
+  const btnMamiferos = document.getElementById("btn_mamiferos");
+  const btnInsectos = document.getElementById("btn_insectos");
+
+  // Evento botón mamíferos
+  btnMamiferos.addEventListener("click", function () {
+    // Aquí se mantiene tu animación existente (si ya la tienes)
+    
+    // Redirección después de un pequeño delay (opcional)
+    setTimeout(() => {
+      window.location.href = "https://ray123anza.github.io/transporte-lapaz/";
+    }, 500); // puedes ajustar el tiempo
+  });
+
+  // Evento botón insectos
+  btnInsectos.addEventListener("click", function () {
+    // Mantiene tu animación
+
+    setTimeout(() => {
+      window.location.href = "https://youtu.be/dQw4w9WgXcQ?si=w5r1XOvcsDL8kk2u";
+    }, 500);
+  });
+
+});
