@@ -33,6 +33,65 @@ body {
   position: relative;
 }
 
+/* CONTENEDOR PRINCIPAL */
+.app {
+  position: relative; /* IMPORTANTE para posicionar hijos */
+  width: 100%;
+  height: 100%;
+}
+
+/* FIGURAS ESTÉTICAS */
+.Inferior1,
+.Inferior2,
+.Inferior3 {
+  position: absolute;
+  width: 360px;
+  height: 20px;
+  background: red;
+  z-index: 10; 
+}
+
+/* POSICIONES */
+.Inferior1 {
+  bottom: 20px;
+  left: 0%;
+  background: #a9c396;
+}
+
+.Inferior2 {
+  bottom: 40px;
+  left: 0%;
+  background: #83a17f;
+}
+
+.Inferior3 {
+  bottom: 0px;
+  left: 0%;
+  background: #af713a;
+}
+
+.decoracion {
+  position: absolute;
+  object-fit: contain;
+
+  z-index: 10; /* encima de botones */
+  pointer-events: none; /* no bloquea clics */
+}
+
+/* POSICIONES */
+.decor1 {
+  top: 100px;
+  left: 0%;
+  width: 360px;
+  height: 100px;
+}
+
+.decor2 {
+  top: -5px;
+  left: 0%;
+  width: 360px;
+  height: 80px;
+}
 
 /* ------------------ */
 /* BOTONES */
@@ -53,19 +112,64 @@ body {
 
 /* BOTONES CIRCULARES */
 .circular {
-  width: 55px;
-  height: 55px;
+  position: absolute; /* 🔥 necesario */
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
+
   top: 50%;
   transform: translateY(-50%);
+
+  background: #83a17f;
+  border: none;
+  cursor: pointer;
 }
 
+/* POSICIÓN */
 .left {
   left: 25px;
 }
 
 .right {
   right: 25px;
+}
+
+/* 🔺 TRIÁNGULO IZQUIERDO */
+.left::before {
+  content: "";
+  position: absolute;
+
+  width: 2px;
+  height: 2px;
+
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-right: 12px solid #fad8a1;
+
+  top: 50%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+
+  filter: drop-shadow(0 2px 2px rgba(0,0,0,0.5));
+}
+
+/* 🔺 TRIÁNGULO DERECHO */
+.right::before {
+  content: "";
+  position: absolute;
+
+  width: 2px;
+  height: 2px;
+
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 12px solid #fad8a1;
+
+  top: 50%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+
+  filter: drop-shadow(0 2px 2px rgba(0,0,0,0.5));
 }
 
 /* BOTÓN CUADRADO */
@@ -96,7 +200,7 @@ body {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  bottom: 250px;
+  bottom: 200px;
 
   transition: all 0.15s ease;
 }
